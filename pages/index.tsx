@@ -4,6 +4,8 @@ import { FC } from 'react'
 import HeadSection from '../components/HeadSection';
 import PrimaryLayout from '../components/layouts/PrimaryLayout';
 import HowSection from '../components/HowSection';
+import WhySection from '../components/WhySection';
+import WhoSection from '../components/WhoSection';
 
 const dataQ = '*[_type == "homepage"][0]'
 const menuQ = '*[_type == "primarynavigation"][0]'
@@ -20,6 +22,8 @@ const Home: FC<{data: any, menu: any}> = ({ data, menu }) => {
       <main>
         <HeroSection data={data} />
         <HowSection data={data} />
+        <WhySection data={data} />
+        <WhoSection data={data} />
       </main>
       </PrimaryLayout>
       <footer>

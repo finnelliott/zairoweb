@@ -98,7 +98,44 @@ export default createSchema({
           title: "How CTA",
           name: "howCTA",
           type: "navigationItem"
-        }
+        },
+        {
+          title: "Why Pretitle",
+          name: "whyPretitle",
+          type: "string",
+        },
+        {
+          title: "Why Heading",
+          name: "whyHeading",
+          type: "string",
+        },
+        {
+          name: "whyItems",
+          type: "array",
+          title: "Why Items",
+          of: [{ type: "whyItem" }]
+        },
+        {
+          title: "Why CTA",
+          name: "whyCTA",
+          type: "navigationItem"
+        },
+        {
+          title: "Who Pretitle",
+          name: "whoPretitle",
+          type: "string",
+        },
+        {
+          title: "Who Heading",
+          name: "whoHeading",
+          type: "string",
+        },
+        {
+          name: "reviews",
+          type: "array",
+          title: "Reviews",
+          of: [{ type: "review" }]
+        },
       ]
     },
     {
@@ -123,6 +160,55 @@ export default createSchema({
           type: "array",
           title: "Navigation Items",
           of: [{ type: "navigationItem" }]
+        }
+      ]
+    },
+    {
+      title: "Why Item",
+      name: "whyItem",
+      type: "object",
+      fields: [
+        {
+          title: "Name",
+          name: "name",
+          type: "string"
+        },
+        {
+          title: "Description",
+          name: "description",
+          type: "string"
+        },
+        {
+          title: "Icon",
+          name: "icon",
+          type: "string"
+        }
+      ]
+    },
+    {
+      title: "Review",
+      name: "review",
+      type: "object",
+      fields: [
+        {
+          title: "Name",
+          name: "name",
+          type: "string"
+        },
+        {
+          title: "Description",
+          name: "description",
+          type: "string"
+        },
+        {
+          title: "Location",
+          name: "location",
+          type: "string"
+        },
+        {
+          title: "Image",
+          name: "image",
+          type: "image"
         }
       ]
     }
