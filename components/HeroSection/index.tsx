@@ -1,28 +1,33 @@
 import { FC } from "react"
+import { ArrowNarrowRightIcon } from '@heroicons/react/outline'
 
 const HeroSection: FC<{data: any}> = ({ data }) => {
     return (
-        <div className="relative bg-gradient-to-r from-cool-black via-primary-dark to-secondary-dark">
+        <div className="relative bg-gradient-to-r from-cool-black via-primary-700 to-secondary-700">
         <main className="lg:relative">
           <div className="mx-auto max-w-7xl w-full pt-16 pb-20 text-center lg:py-48 lg:text-left">
             <div className="px-4 lg:w-1/2 sm:px-8 xl:pr-16">
-              <h1 className="text-4xl tracking-tight font-extrabold text-cool-white sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
-                <span className="block xl:inline">{data.heroHeading}</span>
+              <h1 className="text-4xl font-semibold text-cool-white sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl">
+                <span className="block xl:inline leading-relaxed">{data.heroHeading}</span>
               </h1>
-              <p className="mt-3 max-w-md mx-auto text-lg text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl">
+              <p className="mt-3 max-w-md mx-auto text-lg text-gray-5 sm:text-2xl md:mt-5 md:max-w-3xl">
                 {data.heroSubheading}
               </p>
               <div className="mt-10 sm:flex sm:justify-center lg:justify-start">
-                <div className="rounded-md shadow">
+                <div className="shadow rounded-full">
                   <a
                     href="#"
-                    className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"
+                    className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-semibold rounded-full text-cool-white bg-secondary-300 hover:bg-secondary-400 md:py-4 md:text-lg md:px-10"
                   >
                     {data.heroCTA1Text}
+                    <ArrowNarrowRightIcon className="w-6 h-6 ml-4" />
                   </a>
                 </div>
                 
               </div>
+              <p className="mt-10 text-sm text-gray-5">
+                  {data.heroCTA2Text}
+              </p>
             </div>
           </div>
           <div className="relative w-full h-64 sm:h-72 md:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 lg:h-full">

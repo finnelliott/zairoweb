@@ -1,14 +1,14 @@
-import Head from 'next/head'
 import HeroSection from '../components/HeroSection'
 import sanity from "../lib/sanity";
 import { FC } from 'react'
 import HeadSection from '../components/HeadSection';
-import MainLayout from '../components/layouts/PrimaryLayout';
-import WhatSection from '../components/WhatSection';
+import PrimaryLayout from '../components/layouts/PrimaryLayout';
+import HowSection from '../components/HowSection';
 
-const query = '*[_type == "homepage"][0]'
+const dataQ = '*[_type == "homepage"][0]'
+const menuQ = '*[_type == "primarynavigation"][0]'
 
-const Home: FC<{data: any}> = ({ data }) => {
+const Home: FC<{data: any, menu: any}> = ({ data, menu }) => {
   return (
     <div>
       <HeadSection 
@@ -16,12 +16,12 @@ const Home: FC<{data: any}> = ({ data }) => {
         metadataTitle={data.metadataTitle} 
       />
 
-      <MainLayout>
+      <PrimaryLayout menu={menu}>
       <main>
         <HeroSection data={data} />
-        <WhatSection data={data} />
+        <HowSection data={data} />
       </main>
-      </MainLayout>
+      </PrimaryLayout>
       <footer>
         
       </footer>
@@ -31,9 +31,10 @@ const Home: FC<{data: any}> = ({ data }) => {
 
 
 export const getStaticProps = async () => {
-  const data = await sanity.fetch(query);
+  const data = await sanity.fetch(dataQ);
+  const menu = await sanity.fetch(menuQ)
   return {
-    props: { data }
+    props: { data, menu }
   };
 };
 
