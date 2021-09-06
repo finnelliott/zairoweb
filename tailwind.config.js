@@ -6,7 +6,14 @@ module.exports = {
      'sans': ['Poppins', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', '"Noto Sans"'
      ],
     },
+    backdropFilter: {
+      'none': 'none',
+      'blur': 'blur(20px)',
+    },
     extend: {
+      spacing: {
+         '120': '36rem',
+       },
       colors: {
         cool: {
           "black": "#111827",
@@ -53,7 +60,7 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require('tailwindcss-filters'),],
 }
 
 

@@ -70,14 +70,14 @@ export default createSchema({
           type: "string",
         },
         {
-          title: "Hero CTA 1 Text",
-          name: "heroCTA1Text",
-          type: "string",
+          title: "Hero CTA 1",
+          name: "heroCTA1",
+          type: "navigationItem",
         },
         {
-          title: "Hero CTA 2 Text",
-          name: "heroCTA2Text",
-          type: "string",
+          title: "Hero CTA 2",
+          name: "heroCTA2",
+          type: "navigationItem",
         },
         {
           title: "How Pretitle",
